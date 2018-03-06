@@ -24,12 +24,26 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int totalPrice=calculatePrice();
-        String priceMessage = "Total: $" + totalPrice + "\nThanks you!";
-
+        int totalPrice = calculatePrice();
+        String priceMessage = createOrderSummary(totalPrice, "Jasveer Singh");
         displayMessage(priceMessage);
 
     }
+
+    /**
+     * this method display order summary
+     *
+     * @price for total price of order
+     * @name for person name
+     * @orderSummary return String of order
+     */
+    private String createOrderSummary(int price, String name) {
+        String orderSummary = "Name: " + name;
+        orderSummary += "\nQuantity: " + quantity;
+        orderSummary += "\nTotal: $" + price + "\nThanks You!";
+        return orderSummary;
+    }
+
 
     /**
      * This method displays the given quantity value on the screen.
@@ -40,10 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void displayPrice(int number) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
+
 
 
     public void increment(View view) {
@@ -62,16 +73,17 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
-         /**
-          * Calculates the price of the order.
-          * @return total price
-          *
-          */
-         private int calculatePrice() {
-             int price = quantity * 5;
-             return price;
-         }
+
+    /**
+     * Calculates the price of the order.
+     *
+     * @return total price
+     */
+    private int calculatePrice() {
+        int price = quantity * 5;
+        return price;
+    }
 }

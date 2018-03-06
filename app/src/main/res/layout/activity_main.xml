@@ -19,8 +19,8 @@
         android:background="#4E342E" />
 
     <ImageView
-        android:layout_width="280dp"
-        android:layout_height="280dp"
+        android:layout_width="214dp"
+        android:layout_height="214dp"
         android:layout_gravity="center"
         android:layout_marginTop="18dp"
         android:src="@drawable/logo_1" />
@@ -83,14 +83,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="price"
+        android:text="Order Summary"
         android:textAllCaps="true"
         android:textColor="#3E2723"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/price_text_view"
+        android:id="@+id/order_summary_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
